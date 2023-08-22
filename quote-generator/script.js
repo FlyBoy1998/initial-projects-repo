@@ -25,10 +25,12 @@ function newQuote() {
     // Pick a random quote from apiQuotes array
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];  
     quoteText.textContent = quote.text;
-    if(!quote.author) {
+    authorQuote = quote.author;
+    console.log(apiQuotes);
+    if(!authorQuote || authorQuote === 'type.fit') {
         authorText.textContent = 'Unknown';
     } else {
-        authorText.textContent = quote.author;
+        authorText.textContent = authorQuote.includes(", type.fit") ? authorQuote.replace(", type.fit", ' ') : authorQuote;
     };
     // Check Quote Length to determine styling
     if(quote.text.length > 120) {

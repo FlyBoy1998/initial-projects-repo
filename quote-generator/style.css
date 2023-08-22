@@ -17,6 +17,7 @@ body {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 .quote-container {
